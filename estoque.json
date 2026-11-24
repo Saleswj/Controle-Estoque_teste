@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nome": "Mouse Sem Fio",
+    "categoria": "Periféricos",
+    "quantidade": 14,
+    "preco": 79.90
+  },
+  {
+    "id": 2,
+    "nome": "Cabo HDMI 2.0",
+    "categoria": "Cabos",
+    "quantidade": 4,
+    "preco": 34.50
+  },
+  {
+    "id": 3,
+    "nome": "SSD NVMe 500GB",
+    "categoria": "Armazenamento",
+    "quantidade": 8,
+    "preco": 249.00
+  }
+]

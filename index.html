@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controle de Estoque | ADS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo-conteudo">
+      <div>
+        <h1>Controle de Estoque</h1>
+        <p class="subtitulo">Interface Web • ADS (Front-end &amp; Back-end)</p>
+      </div>
+      <span class="badge-rosa">Estoque Ativo</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Resumo rápido -->
+    <section class="cards-resumo">
+      <div class="card">
+        <span class="card-label">Itens Cadastrados</span>
+        <strong id="total-itens" class="card-valor">0</strong>
+      </div>
+      <div class="card">
+        <span class="card-label">Unidades Totais</span>
+        <strong id="total-unidades" class="card-valor">0</strong>
+      </div>
+      <div class="card card-destaque-rosa">
+        <span class="card-label">Estoque Baixo (&le; 5)</span>
+        <strong id="estoque-baixo" class="card-valor">0</strong>
+      </div>
+    </section>
+
+    <!-- Formulário de cadastro -->
+    <section class="painel">
+      <h2>Cadastrar Produto</h2>
+      <form id="form-produto" class="form-grid">
+        <div class="campo">
+          <label for="nome">Nome do Produto</label>
+          <input type="text" id="nome" placeholder="Ex: Teclado Mecânico" required />
+        </div>
+
+        <div class="campo">
+          <label for="categoria">Categoria</label>
+          <input type="text" id="categoria" placeholder="Ex: Periféricos" required />
+        </div>
+
+        <div class="campo">
+          <label for="quantidade">Quantidade</label>
+          <input type="number" id="quantidade" min="0" value="1" required />
+        </div>
+
+        <div class="campo">
+          <label for="preco">Preço Unitário (R$)</label>
+          <input type="number" id="preco" min="0" step="0.01" placeholder="0.00" required />
+        </div>
+
+        <div class="acoes-form">
+          <button type="submit" class="btn btn-primario">+ Adicionar ao Estoque</button>
+          <button type="button" id="btn-resetar" class="btn btn-secundario">Restaurar JSON Original</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Busca e Tabela -->
+    <section class="painel">
+      <div class="cabecalho-tabela">
+        <h2>Itens em Estoque</h2>
+        <input type="search" id="busca" class="input-busca" placeholder="Buscar por nome ou categoria..." />
+      </div>
+
+      <div class="tabela-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Categoria</th>
+              <th>Qtd.</th>
+              <th>Preço Un.</th>
+              <th>Subtotal</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-estoque">
+            <!-- Preenchido via app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
